@@ -1,20 +1,45 @@
 # Turinys
 
-- [Pradžia](#pradzia)
-- [Kodėl gerai?](#kodel_gerai)
+- [Turinys](#turinys)
+- [Fork Užrašai skirti KTU EEF](#fork-užrašai-skirti-ktu-eef)
+- [Pradžia](#pradžia)
+- [Kodėl gerai?](#kodėl-gerai)
 - [Parsisiuntimas](#parsisiuntimas)
-- [Įdiegimas](#idiegimas)
-	- ["Zotero"](#idiegimas_zotero)
-	- [Bibliografijos stiliaus failas](#idiegimas_stilius)
+- [Įdiegimas](#įdiegimas)
+	- [1. Parsisiųskite ir įdiekite "Zotero"](#1-parsisiųskite-ir-įdiekite-zotero)
+	- [2. Parsisiųskite ir įdiekite bibliografijos stiliaus failą](#2-parsisiųskite-ir-įdiekite-bibliografijos-stiliaus-failą)
 - [Naudojimas](#naudojimas)
-	- [Bibliografinių nuorodų pridėjimas](#naudojimas_pridejimas)
-		- [Knygos pridėjimas](#naudojimas_pridejimas_knyga)
-		- [Pridėjimas pagal ISBN](#naudojimas_pridejimas_isbn)
-		- [Tinklalapio pridėjimas](#naudojimas_pridejimas_tinklalapis)
-	- [Nuorodų iškėlimas į rengiamą darbą](#naudojimas_iskelimas)
+	- [1. Pridėkite keletą bibliografinių nuorodų į "Zotero"](#1-pridėkite-keletą-bibliografinių-nuorodų-į-zotero)
+		- [Paprastas pridėjimas](#paprastas-pridėjimas)
+		- [Pridėjimas pagal ISBN](#pridėjimas-pagal-isbn)
+		- [Tinklalapio pridėjimas](#tinklalapio-pridėjimas)
+	- [2. Iškelkite bibliografines nuorodas iš "Zotero" į rengiamą dokumentą](#2-iškelkite-bibliografines-nuorodas-iš-zotero-į-rengiamą-dokumentą)
 - [Kita](#kita)
-- [Klaidos, pastabos](#klaidos_pastabos)
+- [Klaidos, pastabos](#klaidos-pastabos)
 
+
+<a name="fork"></a>
+
+# Fork Užrašai skirti KTU EEF
+
+Šis fork pataiso kelias rastas klaidas su pasikartojančiais skyrybos ženklais ir pritaiko formatavimą labiau tinkantį KTU EEF studentams. Originalus stilius: <https://github.com/pypt/csl-lithuanian>
+
+![](imgs/2023-03-01-01-13-25.png)
+
+Nėra gero būdo automatiškai padaryti tarpus tarp eilučių nes [CSL palaiko tik sveikus skaičius](https://docs.citationstyles.org/en/stable/specification.html?highlight=line-spacing#whitespace)
+
+Apeinant galima per [Word pakeisti `Normal` stilių](https://forums.zotero.org/discussion/10911/csl-setting-1-5-line-spacing-in-bibliography#Comment_52393/div/div-3/div/div) ir jis bus pritaikytas sąrašui, tačiau visi kiti Word stiliai, kurie priklauso nuo `Normal` stiliaus irgi pasikeis.
+
+Kad `Normal` stiliaus neperrašytų reikia ištrinti `line-spacing="1" entry-spacing="0"` (arba galima keisti vertes ir bandyti be Word stilių):
+```
+<bibliography second-field-align="flush" line-spacing="1" entry-spacing="0">
+```
+Gausis:
+```
+<bibliography second-field-align="flush">
+```
+
+Patogus visualinis įrankis CSL redagavimui: <https://editor.citationstyles.org/codeEditor/>
 
 <a name="pradzia"></a>
 
