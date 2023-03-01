@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="lt-LT">
   <info>
-    <title>ISO-690 KTU (numeric, Lithuanian)</title>
+    <title>ISO-690 KTU (numeric, Lietuvių kalba)</title>
     <id>https://github.com/Combinacijus/csl-lithuanian-ktu</id>
     <link href="https://github.com/Combinacijus/csl-lithuanian-ktu/blob/master/iso690-ktu-numeric-lt.csl" rel="self"/>
     <link href="http://www.kf.vu.lt/uploads/docs/Studiju%20dokumentai/metodiniai_nurodymai090204.pdf" rel="documentation"/>
@@ -17,7 +17,7 @@
     <category citation-format="numeric"/>
     <category field="generic-base"/>
     <summary>ISO 690 style for the Kaunas University of Technology, Faculty of Electrical and Electronics Engineering. (Numeric version)</summary>
-    <updated>2023-02-28T21:58:39+00:00</updated>
+    <updated>2023-03-01T10:08:50+00:00</updated>
     <rights>This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
   <locale>
@@ -66,13 +66,13 @@
         <if type="book thesis" match="any">
           <text variable="title" font-style="italic"/>
         </if>
-        <else-if type="paper-conference chapter article-journal article-magazine article-newspaper webpage" match="any">
+        <else-if type="paper-conference chapter article-journal article-magazine article-newspaper webpage software" match="any">
           <text variable="title" suffix=". "/>
           <text term="in" text-case="capitalize-first" suffix=" "/>
           <text macro="container_author"/>
           <choose>
             <if variable="container-title">
-              <text variable="container-title" font-style="italic" suffix=""/>
+              <text variable="container-title" font-style="italic"/>
             </if>
             <else>
               <text variable="event" font-style="italic" suffix=""/>
@@ -148,7 +148,7 @@
       <date-part name="year"/>
     </date>
   </macro>
-  <macro name="year-date" >
+  <macro name="year-date">
     <date variable="issued" font-variant="normal" vertical-align="baseline">
       <date-part name="year"/>
     </date>
@@ -201,7 +201,7 @@
     </group>
   </macro>
   <macro name="isbn">
-    <text prefix="ISBN " variable="ISBN"/>
+    <text prefix=" ISBN " variable="ISBN"/>
   </macro>
   <citation>
     <sort>
@@ -213,11 +213,12 @@
   </citation>
   <bibliography second-field-align="flush" line-spacing="1" entry-spacing="0">
     <sort>
-      <key macro="author"/>
-      <key variable="title"/>
+      <key variable="citation-number" sort="ascending"/>
+      <!-- <key macro="author"/>
+      <key variable="title"/> -->
     </sort>
     <layout vertical-align="baseline" suffix=".">
-      <text variable="citation-number" suffix=".  " />
+      <text variable="citation-number" suffix=".  "/>
       <text macro="author" suffix=""/>
       <choose>
         <if type="book">
@@ -230,7 +231,7 @@
               <text macro="year-date" suffix=", "/>
             </group>
             <text macro="pages"/>
-            <text prefix="ISBN " variable="ISBN"/>
+            <text prefix=" ISBN " variable="ISBN"/>
           </group>
         </if>
         <else-if type="article-journal article-magazine" match="any">
@@ -285,7 +286,7 @@
           <text macro="availability"/>
         </else-if>
         <else>
-          <group suffix=".">
+          <group>
             <text macro="title" prefix=" "/>
             <text macro="editor" prefix=" "/>
           </group>
